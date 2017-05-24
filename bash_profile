@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Path
-export PATH=/usr/local/bin:$PATH
+export PATH=~/bin:/usr/local/bin:$PATH
 
 # Shell
 source $(brew --prefix)/etc/bash_completion
@@ -42,3 +42,10 @@ fi
 if [ -f ~/google-cloud-sdk/completion.bash.inc ]; then
   source ~/google-cloud-sdk/completion.bash.inc
 fi
+
+# Mono
+MONO_HOME=/Library/Frameworks/Mono.framework
+export PATH=$PATH:$MONO_HOME/Versions/Current/bin
+
+export AWS_ACCOUNT_ID=293486771097
+export AWS_IAM_USER=matt.daley
