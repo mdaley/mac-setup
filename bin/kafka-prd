@@ -1,0 +1,1 @@
+kafkacat -b kafka-prd.ovo-prd.aivencloud.com:21556 -X security.protocol=ssl -X ssl.key.location=/Users/matt.daley/aiven-credentials/prd/service.key -X ssl.certificate.location=/Users/matt.daley/aiven-credentials/prd/service.cert -X ssl.ca.location=/Users/matt.daley/aiven-credentials/prd/ca.pem $@

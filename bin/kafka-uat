@@ -1,0 +1,1 @@
+kafkacat -b kafka-uat.ovo-uat.aivencloud.com:13581 -X security.protocol=ssl -X ssl.key.location=/Users/matt.daley/aiven-credentials/uat/meters-service-user.key -X ssl.certificate.location=/Users/matt.daley/aiven-credentials/uat/meters-service-user.cert -X ssl.ca.location=/Users/matt.daley/aiven-credentials/uat/ca.pem $@

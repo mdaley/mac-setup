@@ -1,0 +1,9 @@
+#!/bin/bash
+# These might not all be the right prod settings?
+
+export METERS_WORKERS_AIVEN_CONSUMER_CLIENTSTORE=/Users/matt.daley/workspace/meters-workers/k8s/uat/aiven_consumer_clientstore.p12
+export METERS_WORKERS_AIVEN_CONSUMER_TRUSTSTORE=/Users/matt.daley/workspace/meters-workers/k8s/uat/aiven_consumer_truststore.jks
+export AIVEN_TRUSTSTORE_CONSUMER_PASSWORD=zkrR[3XWV[6X?jkD
+export AIVEN_CLIENTSTORE_CONSUMER_PASSWORD=DkfxWJ97.2c\"VZ7*
+export SCHEMA_REGISTRY_CONSUMER_USERNAME=meters-service
+export SCHEMA_REGISTRY_CONSUMER_PASSWORD=o4c29mvpuvytp0ca
