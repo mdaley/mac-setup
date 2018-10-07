@@ -10,7 +10,7 @@ source $GIT_HOME/etc/bash_completion.d/git-prompt.sh
 export PS1='\[\e]0;: \w\a\]\[\e[32;1m\]${debian_chroot:+($debian_chroot)}:\w \[\e[33;1m\]$(__git_ps1 "[%s] ")\[\e[32;1m\]\$ \[\e[0m\]'
 
 # Java
-export JAVA_HOME=`/usr/libexec/java_home -v 9`
+export JAVA_HOME=`/usr/libexec/java_home -v 11`
 
 # GPG Agent
 #if test -f $HOME/.gpg-agent-info && \
@@ -46,3 +46,6 @@ export JAVA_HOME=`/usr/libexec/java_home -v 9`
 
 # export AWS_ACCOUNT_ID=293486771097
 # export AWS_IAM_USER=matt.daley
+
+# Web Assembly SDK
+source ~/workspace/emsdk/emsdk_env.sh > /dev/null
