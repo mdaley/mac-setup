@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Path
-export PATH=~/bin:$PATA:/usr/local/sbinH
+export PATH=~/bin:$PATH:/usr/local/sbin
 
 # Git
 export GIT_HOME=`git --exec-path | sed 's/\/libexec\/git-core//'`
