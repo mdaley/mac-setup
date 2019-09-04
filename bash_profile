@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Path
-export PATH=~/bin:$PATH
+export PATH=~/bin:$PATA:/usr/local/sbinH
 
 # Git
 export GIT_HOME=`git --exec-path | sed 's/\/libexec\/git-core//'`
@@ -48,4 +48,7 @@ export JAVA_HOME=`/usr/libexec/java_home -v 11`
 # export AWS_IAM_USER=matt.daley
 
 # Web Assembly SDK
-source ~/workspace/emsdk/emsdk_env.sh > /dev/null
+#source ~/workspace/emsdk/emsdk_env.sh > /dev/null
+
+# Intel MKL
+source /opt/intel/mkl/bin/mklvars.sh
