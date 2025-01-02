@@ -1,16 +1,25 @@
-#!/bin/bash
+#!/bin/zsh
+
+zstyle ':completion:*:*:git:*' script ~/mac-setup/git-completion.bash
+FPATH=~/mac-setup:$FPATH
+
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
 
 # Path
 export PATH=~/bin:$PATH:/usr/local/sbin
 
 # Git
 export GIT_HOME=`git --exec-path | sed 's/\/libexec\/git-core//'`
-source $GIT_HOME/etc/bash_completion.d/git-completion.bash
-source $GIT_HOME/etc/bash_completion.d/git-prompt.sh 
-export PS1='\[\e]0;: \w\a\]\[\e[32;1m\]${debian_chroot:+($debian_chroot)}:\w \[\e[33;1m\]$(__git_ps1 "[%s] ")\[\e[32;1m\]\$ \[\e[0m\]'
+source "$(brew --prefix)/opt/zsh-git-prompt/zshrc.sh"
+PROMPT='%B%~%b$(git_super_status) \$ '
 
 # Java
-export JAVA_HOME=`/usr/libexec/java_home -v 16`
+export JAVA_HOME=`/usr/libexec/java_home -v 11`
 
 # GPG Agent
 #if test -f $HOME/.gpg-agent-info && \
@@ -20,8 +29,8 @@ export JAVA_HOME=`/usr/libexec/java_home -v 16`
 #    # No, gpg-agent not available; start gpg-agent
 #    eval `gpg-agent --daemon --no-grab --write-env-file $HOME/.gpg-agent-info`
 #fi
-export GPG_TTY=`tty`
-export GPG_AGENT_INFO
+#export GPG_TTY=`tty`
+#export GPG_AGENT_INFO
 
 # Octave
 # export PATH=$PATH:/Applications/Octave.app/Contents/Resources/usr/bin
@@ -52,12 +61,3 @@ export GPG_AGENT_INFO
 
 # Intel MKL
 source /opt/intel/mkl/bin/mklvars.sh
-
-# QT
-export PATH=$PATH:/usr/local/Cellar/qt/5.14.2/bin
-
-# AWS
-complete -C '/usr/local/bin/aws_completer' aws
-
-# RUST
-export PATH="$HOME/.cargo/bin:$PATH"
