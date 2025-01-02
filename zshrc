@@ -19,8 +19,12 @@ source "$(brew --prefix)/opt/zsh-git-prompt/zshrc.sh"
 PROMPT='%B%~%b$(git_super_status) \$ '
 
 # Java
-export JAVA_HOME=`/usr/libexec/java_home -v 11`
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+jenv global 21
+export JAVA_HOME=$(jenv javahome)
 
+# Quarkus
+source <(quarkus completion)
 # GPG Agent
 #if test -f $HOME/.gpg-agent-info && \
 #    kill -0 `cut -d: -f 2 $HOME/.gpg-agent-info` 2>/dev/null; then
